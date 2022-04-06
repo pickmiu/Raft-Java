@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--自定义颜色配置-->
+    <conversionRule conversionWord="customcolor" converterClass="config.logback.LogBackColorful"/>
+
+    <!--控制台日志配置-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%red(%d{yyyy-MM-dd HH:mm:ss.SSS}) %green([%thread]) %customcolor(%-5level) %boldMagenta(%logger{15}) - %cyan(%msg%n)</pattern>
+        </encoder>
+    </appender>
+    <!-- 打印的级别 info之上-->
+    <root level="debug">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
